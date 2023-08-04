@@ -1,76 +1,57 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonLabel, IonButton, IonInput } from '@ionic/react';
+import './Tab1.css';
 
 const Tab1: React.FC = () => {
-  const [timerRunning, setTimerRunning] = useState(false);
-  const [timerValue, setTimerValue] = useState(0);
-  const [textList, setTextList] = useState([
-    "Line 1",
-    "Line 2",
-    "Line 3",
-    "Line 4",
-    "Line 5",
-    "Line 6",
-    "Line 7",
-    "Line 8",
-  ]);
+  const [textLines, setTextLines] = useState<string[]>(['Line 1', 'Line 2', 'Line 3']);
 
-  const handleTimerClick = () => {
-    setTimerRunning((prevState) => !prevState);
-    // Implement timer logic here (start/stop the timer)
+  const handleObjectClick = (objectId: number) => {
   };
 
-  const handleObjectClick = (object: string) => {
-    // Implement navigation to the new page using the selected object
-    console.log(`Clicked on object: ${object}`);
+  const handleStartTimer = () => {
   };
 
-  const handleTextChange = (index: number, newText: string) => {
-    setTextList((prevList) => {
-      const newList = [...prevList];
-      newList[index] = newText;
-      return newList;
-    });
+  const handleStopTimer = () => {
+  };
+
+  const handleTextChange = (lineIndex: number, newText: string) => {
+    setTextLines((prevLines) =>
+      prevLines.map((line, index) => (index === lineIndex - 1 ? newText : line))
+    );
   };
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonList>
-          {/* Container 1: List of Objects */}
-          {textList.map((object, index) => (
-            <IonItem key={index} button onClick={() => handleObjectClick(object)}>
-              <IonLabel>{object}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList>
+    <div className="tab1-container">
+      {/* Container One */}
+      <div className="objects-container">
+        <div className="object-item" onClick={() => handleObjectClick(1)}>Object 1</div>
+        <div className="object-item" onClick={() => handleObjectClick(2)}>Object 2</div>
+        <div className="object-item" onClick={() => handleObjectClick(3)}>Object 3</div>
+        <div className="object-item" onClick={() => handleObjectClick(4)}>Object 4</div>
+        <div className="object-item" onClick={() => handleObjectClick(5)}>Object 5</div>
+        <div className="object-item" onClick={() => handleObjectClick(6)}>Object 6</div>
+      </div>
 
-        {/* Container 2: Timer */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px' }}>
-          <div>{timerValue} seconds</div>
-          <IonButton onClick={handleTimerClick}>{timerRunning ? 'Stop Timer' : 'Start Timer'}</IonButton>
-        </div>
+      {/* Container Two */}
+      <div className="timer-container">
+        <div>00:00</div>
+        <button onClick={handleStartTimer}>Start</button>
+        <button onClick={handleStopTimer}>Stop</button>
+      </div>
 
-        {/* Container 3: List of Editable Text Lines */}
-        <IonList>
-          {textList.map((line, index) => (
-            <IonItem key={index}>
-              <IonInput
-                value={line}
-                onIonChange={(e) => handleTextChange(index, e.detail.value!)}
-              ></IonInput>
-            </IonItem>
-          ))}
-        </IonList>
-      </IonContent>
-    </IonPage>
+      {/* Container Three */}
+      <div className="text-list-container">
+        {textLines.map((line, index) => (
+          <div key={index} className="text-line-item">
+            <input
+              type="text"
+              value={line}
+              onChange={(e) => handleTextChange(index + 1, e.target.value)}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
 export default Tab1;
-

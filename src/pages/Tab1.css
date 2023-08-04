@@ -1,0 +1,98 @@
+
+.objects-container {
+    padding: 1.25rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column; /* Change to vertical direction */
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 90%;
+  }
+  
+
+  .object-item {
+    padding: 0.625rem;
+    cursor: pointer;
+  }
+  
+  /* Parent container for Containers Two and Three */
+  .tab1-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 3rem;
+    position: relative; /* Add position relative to contain absolutely positioned containers */
+  }
+  
+ 
+  .timer-container,
+  .text-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    font-size: 1.5rem;
+    border: 0.0625rem solid #ccc; /* Add border around containers */
+    border-radius: 0.5rem;
+    width: 45%; /* Set the width to make them wider */
+    height: 25%; /* Increase the height of both containers */
+    margin-bottom: 1rem;
+  }
+  
+  
+  .timer-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem; /* Move to the lower left */
+  }
+
+  .text-list-container {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem; /* Move to the lower right */
+    max-height: 40%; /* Set a max-height for scrolling */
+    overflow-y: auto; /* Add scrolling if content overflows */
+  }
+  
+
+  .text-line-item {
+    padding: 0.625rem;
+    border-bottom: 0.0625rem solid #ccc;
+  }
+  
+
+  .text-line-item input {
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+
+  .text-line-item input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+
+  .text-line-item ion-button {
+    --color: var(--ion-color-primary);
+    padding: 1rem 2rem; /* Increase the padding to make the buttons even bigger */
+    font-size: 1.4rem; /* Increase the font size to make the buttons even bigger */
+  }
+  
+  .tab1-container ion-list {
+    max-width: 90vw;
+  }
+  
+
+  .text-list-container .text-line-item {
+    margin-bottom: 0.5rem; /* Add margin between lines */
+    white-space: pre-line; /* Preserve line breaks in text */
+  }
+  

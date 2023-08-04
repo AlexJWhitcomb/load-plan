@@ -38,31 +38,42 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+    {/* React Router setup */}
     <IonReactRouter>
+      {/* Ionic Tabs setup */}
       <IonTabs>
+        {/* IonRouterOutlet for handling route transitions */}
         <IonRouterOutlet>
+          {/* Route for Tab1 */}
           <Route exact path="/tab1">
             <Tab1 />
           </Route>
+          {/* Route for Tab2 */}
           <Route exact path="/tab2">
             <Tab2 />
           </Route>
+          {/* Route for Tab3 */}
           <Route path="/tab3">
             <Tab3 />
           </Route>
+          {/* Default route, redirect to Tab1 when no route matches */}
           <Route exact path="/">
             <Redirect to="/tab1" />
           </Route>
         </IonRouterOutlet>
+        {/* Ionic TabBar for navigation */}
         <IonTabBar slot="bottom">
+          {/* Tab Button for Tab1 */}
           <IonTabButton tab="tab1" href="/tab1">
             <IonIcon aria-hidden="true" icon={triangle} />
             <IonLabel>Tab 1</IonLabel>
           </IonTabButton>
+          {/* Tab Button for Tab2 */}
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon aria-hidden="true" icon={ellipse} />
             <IonLabel>Tab 2</IonLabel>
           </IonTabButton>
+          {/* Tab Button for Tab3 */}
           <IonTabButton tab="tab3" href="/tab3">
             <IonIcon aria-hidden="true" icon={square} />
             <IonLabel>Tab 3</IonLabel>
