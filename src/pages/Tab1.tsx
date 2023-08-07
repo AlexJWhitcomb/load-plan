@@ -33,9 +33,12 @@ const Tab1: React.FC = () => {
 
       {/* Container Two */}
       <div className="timer-container">
+        <h1>T/O Timer</h1>
         <div>00:00</div>
+        <div className='start-stop'>
         <button onClick={handleStartTimer}>Start</button>
         <button onClick={handleStopTimer}>Stop</button>
+        </div>
       </div>
 
       {/* Container Three */}
