@@ -1,95 +1,40 @@
-
-/* Container for the list of objects */
-.objects-container {
-  padding: 1.25rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  height: 60%;
-  width: 90%;
-}
-
-/* Individual object item */
-.object-item {
-  padding: 0.625rem;
-  cursor: pointer;
-}
-
-/* Parent container for Containers Two and Three */
+/* Tab1.css */
 .tab1-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 100%;
-  padding-bottom: 3rem;
-  position: relative; 
+  height: 100vh;
 }
 
-/* Timer container */
-.timer-container,
-.text-list-container {
+.objects-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.25rem;
-  font-size: 1.5rem;
-  border: 0.0625rem solid #ccc; 
-  border-radius: 0.5rem;
-  width: 45%;
-  height: 25%; 
-  margin-bottom: 1rem;
+  /* ... */
 }
 
-/* Timer container */
-.timer-container {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
+.bottom-containers {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
 }
 
-/* Style for the start and stop buttons */
-.start-stop button {
-  padding: 1rem 2rem; 
-  font-size: 1.4rem; 
-  margin: 0.5rem; 
+.container-two {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 50vh;
+  overflow: auto;
 }
 
-/* List of editable text lines container */
-.text-list-container {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem; 
-  max-height: 40%; 
-  overflow-y: auto; 
-}
-
-/* Individual text line item */
-.text-line-item {
-  padding: 0.625rem;
-  border-bottom: 0.0625rem solid #ccc;
-}
-
-/* Style for the input field within the text-line-item */
-.text-line-item input {
-  font-size: 1rem;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-}
-
-/* Remove the default outline when an input is focused */
-.text-line-item input:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-/* Additional styles for line breaks in Container Three */
-.text-list-container .text-line-item {
-  margin-bottom: 0.5rem;
-  white-space: pre-line; 
+.container-three {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 50vh;
+  overflow: auto;
 }
