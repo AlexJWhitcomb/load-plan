@@ -15,6 +15,11 @@ import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
+//Aircraft Pages:
+import C17 from './components/C17';
+import C130 from './components/C130';
+import KC135 from './components/KC135';
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -60,6 +65,20 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/tab1" />
           </Route>
+
+          {/* Route for C-17 */}
+          <Route exact path="/c17">
+            <C17 />
+          </Route>
+          {/* Route for C-130 */ }
+          <Route exact path="/c130">
+            <C130 />
+          </Route>
+          {/* Route for KC-135 */ }
+          <Route exact path="/kc135">
+            <KC135 />
+          </Route>
+
         </IonRouterOutlet>
         {/* Ionic TabBar for navigation */}
         <IonTabBar slot="bottom">
