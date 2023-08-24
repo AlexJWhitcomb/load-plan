@@ -1,0 +1,46 @@
+.page-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 250px;
+    transition: width 0.3s;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+  }
+  
+  .open {
+    width: 0;
+  }
+  
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-toggle {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .draggable-item {
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+  }

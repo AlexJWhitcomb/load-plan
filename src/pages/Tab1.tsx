@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Tab1.css';
 
+
 const Tab1: React.FC = () => {
+  const history = useHistory();
   const [textLines, setTextLines] = useState<string[]>(['MCD', '2FN', 'CMT', '2AET', '3AET']);
   //Timer's states:
   const [startTime, setStartTime] = useState<number | null>(null);
@@ -9,6 +12,19 @@ const Tab1: React.FC = () => {
   const [elapsedTime, setElapsedTime] = useState(0);
 
   const handleObjectClick = (objectId: number) => {
+    switch (objectId) {
+      case 1:
+        history.push('/c17');
+        break;
+      case 2:
+        history.push('/c130');
+        break;
+      case 3:
+        history.push('/kc135');
+        break;
+      default:
+        break;
+    }
   };
 
   const handleStartTimer = () => {
@@ -66,14 +82,14 @@ const Tab1: React.FC = () => {
       <div className="ion-text-center ion-margin-bottom">
         {/* Container One */}
         <div className="ion-card objects-container">
-          <div className="object-item ion-margin">
-            Object 1
+          <div className="object-item ion-margin" onClick={() => handleObjectClick(1)}>
+            C-17
           </div>
-          <div className="object-item ion-margin">
-            Object 2
+          <div className="object-item ion-margin" onClick={() => handleObjectClick(2)}>
+            C-130
           </div>
-          <div className="object-item ion-margin">
-            Object 3
+          <div className="object-item ion-margin" onClick={() => handleObjectClick(3)}>
+            KC-135
           </div>
           <div className="object-item ion-margin">
             Object 4
