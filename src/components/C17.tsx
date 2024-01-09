@@ -27,45 +27,56 @@ const C17: React.FC = () => {
 	}
 
 	return (
-		<div className="page-container">
-			<div className={`sidebar &{sidebarOpen ? 'open' : ''}`}>
-				<DragDropContext onDragEnd={handleDragEnd}>
-					<Droppable droppableId="droppable">
-						{(provided) => (
-							<div
-								{...provided.droppableProps}
-								ref={provided.innerRef}
-							>
-								{items.map((item, index) => (
-									<Draggable key={item.id} draggableId={item.id} index={index}>
-										{(provided) => (
-											<div
-												ref={provided.innerRef}
-												{...provided.draggableProps}
-												{...provided.dragHandleProps}
-												className="draggable-item"
-											>
-												{item.content}
-											</div>
-										)}
-									</Draggable>
-								))}
-								{provided.placeholder}
-							</div>
-						)}
-					</Droppable>
-				</DragDropContext>
-			</div>
-			<div className="context">
-				<button className="sidebar-toggle" onClick={toggleSidebar}>
-					Medical Equipment
-				</button>
-				<div className="card">
-					Image Goes Here
-				</div>
-			</div>
+		<div className="load-plan-container">
+			<img src="src/components/c17lp.jpg" alt="C-17 Load Plan" className="load-plan-image" />
 		</div>
 	)
 };
 
 export default C17;
+
+
+
+//Droppable version:
+
+// return (
+// 	<div className="page-container">
+// 		<div className={`sidebar &{sidebarOpen ? 'open' : ''}`}>
+// 			<DragDropContext onDragEnd={handleDragEnd}>
+// 				<Droppable droppableId="droppable">
+// 					{(provided) => (
+// 						<div
+// 							{...provided.droppableProps}
+// 							ref={provided.innerRef}
+// 						>
+// 							{items.map((item, index) => (
+// 								<Draggable key={item.id} draggableId={item.id} index={index}>
+// 									{(provided) => (
+// 										<div
+// 											ref={provided.innerRef}
+// 											{...provided.draggableProps}
+// 											{...provided.dragHandleProps}
+// 											className="draggable-item"
+// 										>
+// 											{item.content}
+// 										</div>
+// 									)}
+// 								</Draggable>
+// 							))}
+// 							{provided.placeholder}
+// 						</div>
+// 					)}
+// 				</Droppable>
+// 			</DragDropContext>
+// 		</div>
+// 		<div className="context">
+// 			<button className="sidebar-toggle" onClick={toggleSidebar}>
+// 				Medical Equipment
+// 			</button>
+// 			<div className="load-plan-container">
+// 				<img src="src/components/c17lp.jpg" alt="C-17 Load Plan" className="load-plan-image" />
+// 			</div>
+// 		</div>
+// 	</div>
+// )
+// };

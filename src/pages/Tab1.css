@@ -1,5 +1,68 @@
 /* Tab1.css */
+
 .tab1-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.objects-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.lower-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.timer-container,
+.text-list-container {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.c17-image {
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+.c130-image {
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+.kc135-image {
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+.button-css {
+  margin-right: 15px;
+  font-size: 18px;
+  color: white;
+  background-color: rgb(44, 140, 237);
+  width: 200px;
+  height: 60px;
+}
+
+.custom-font-size {
+  font-size: 50px; 
+}
+
+
+
+/* .tab1-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +74,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* ... */
 }
 
 .bottom-containers {
@@ -37,4 +99,4 @@
   border-radius: 4px;
   max-height: 50vh;
   overflow: auto;
-}
+} */
